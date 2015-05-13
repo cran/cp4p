@@ -1,0 +1,9 @@
+840900f1e71d1cdbd1da7362a2ae9768 *DESCRIPTION
+ee2d4fab9e6f4c3d728698199ec09afd *NAMESPACE
+0c17a42cfce44d86f3d86b9a9ebfee92 *R/adjust_p.R
+f1fab5460869dc2cab4dc0f2059fd19a *R/calibration_plot.R
+c091bb3ae2cfcc49f3da86e1ee71d78e *R/estim_pi0.R
+fb6e66311330681625ebf81500252fcb *man/adjust.p.Rd
+26a3c9ec625142b1a2eed4f8e2eb97d8 *man/calibration.plot.Rd
+55669a0269724255c1bbda6522855c84 *man/cp4p-package.Rd
+b46a476f6af4f52824bfe8e2f1a7bddf *man/estim.pi0.Rd
