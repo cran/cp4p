@@ -31,14 +31,14 @@ In addition, two other measures are given in the caption of the graphic. Each ha
 
 The first measure corresponds to one minus the ratio between the green area and the grey area (referred to as "differentially abundant protein concentration"). The closer to 100\% this measure is, the smaller the false nondiscovery rate is expected. 
 
-The second measure corresponds to the total red area observed on the graph (referred to as "divergence to uniformity"). The smaller this measure is, the more the proportion of true null hypotheses is expected to be not under-estimated (so as to get a conservative p-value adjustment).
+The second measure corresponds to the total red area observed on the graph (referred to as "uniformity underestimation"). The smaller this measure is, the more the proportion of true null hypotheses is expected to be not under-estimated (so as to get a conservative p-value adjustment).
 
 }
 \value{
 A list composed of :
 \item{pi0}{Numeric value corresponding to the proportion of true null hypotheses (non-differentially abundant proteins or peptides) used for the plot. Numeric vector if \code{pi0.method="ALL"}.}
 \item{h1.concentration}{Numeric value corresponding to one minus the ratio between the green area and the grey area. NULL if \code{pi0.method="ALL"}.}
-\item{div.to.uniform}{Numeric value corresponding to the total red area observed on the graph (multiplied by 100). NULL if \code{pi0.method="ALL"}.}
+\item{unif.under}{Numeric value corresponding to the total red area observed on the graph (multiplied by 100). NULL if \code{pi0.method="ALL"}.}
 }
 \references{
 %C. Genovese and L. Wasserman.  Operating characteristics and extensions of the false discovery rate procedure. Journal of the Royal Statistical Society: Series B (Statistical Methodology), 64(3):499-517, 2002.
@@ -60,8 +60,9 @@ Quentin Giai Gianetto <quentin2g@yahoo.fr>
 \code{\link{estim.pi0}}
 }
 \examples{
-#simulate a vector of p-values
-p=c(rbeta(500,1,20),runif(500,0,1))
+#get p-values
+data(LFQRatio25)
+p=LFQRatio25[,7]
 
 #Plot straight lines whose slopes correspond to different estimates of 
 #the proportion of true null hypotheses

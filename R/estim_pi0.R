@@ -6,7 +6,8 @@
 estim.pi0=function (p, pi0.method = "ALL",  nbins = 20, pz = 0.05){
   #library(pi0)
   #library(qvalue)
-
+ if (pi0.method=="ALL"||pi0.method=="st.spline"||pi0.method=="st.boot"||pi0.method=="jiang"||pi0.method=="histo"||pi0.method=="langaas"||pi0.method=="pounds"||pi0.method=="abh"||pi0.method=="slim"){
+    
   ######################################
   #PI0 from LSL method of Benjamini-Hochberg (2000)
   #Reference: On the adaptive control of the false discovery rate in multiple testing with independent statistics.
@@ -181,4 +182,5 @@ estim.pi0=function (p, pi0.method = "ALL",  nbins = 20, pz = 0.05){
     pi0.SLIM=slim[[1]];
     return(list(pi0.SLIM=pi0.SLIM)) ; 
   }
+ }else{stop("\n Error in input pi0.method:\n Please write the name of an estimation method among st.spline, st.boot, jiang, histo, langaas, pounds, abh, slim or ALL.\n");}
 }

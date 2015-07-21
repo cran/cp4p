@@ -17,10 +17,9 @@ In addition, the package allows performing an adequately chosen adaptive FDR con
 \tabular{ll}{
 Package: \tab cp4p\cr
 Type: \tab Package\cr
-Version: \tab 0.2\cr
-Date: \tab 2015-05-12\cr
+Version: \tab 0.3\cr
 License: \tab GPL-3\cr
-Depends:\tab multtest, qvalue, limma, MESS\cr
+Depends:\tab multtest, qvalue, limma, MESS, graphics, stats\cr
 }
 This package is composed of three functions that take as input a vector of p-values resulting from multiple two-sided hypothesis testing (such as multiple t-tests for equal means for instance). 
 
@@ -29,6 +28,8 @@ First, the function \code{\link{estim.pi0}} allows determining the proportion of
 Second, the function \code{\link{calibration.plot}} proposes an intuitive plot of the p-values, so as to visually assess their behavior and well-calibration. 
 
 Third, the function \code{\link{adjust.p}} allows obtaining adjusted p-values in view to perform an adaptive FDR control from a chosen level.
+
+Two proteomic datasets named \code{\link{LFQRatio2}} and \code{\link{LFQRatio25}} allow to use these functions in a concrete framework where the proportion of non-differentially abundant proteins is known.
 }
 \author{
 Quentin Giai Gianetto, Florence Combes, Yohann Couté, Christophe Bruley, Thomas Burger

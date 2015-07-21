@@ -88,16 +88,22 @@ Quentin Giai Gianetto <quentin2g@yahoo.fr>
 \code{\link{calibration.plot}}, \code{\link{adjust.p}}
 }
 \examples{
-#simulate a vector of p-values
-p=c(rbeta(500,1,20),runif(500,0,1))
+#get p-values
+data(LFQRatio2)
+p=LFQRatio2[,7]
 
-#estimating the proportion of true null hypotheses with different methods
+#estimate the proportion of true null hypotheses with different methods
 r=estim.pi0(p)
 r$pi0
 
-#estimating the proportion of true null hypotheses with the "pounds" method
-r=estim.pi0(p, pi0.method="pounds")
+#estimate the proportion of true null hypotheses with the "abh" method
+r=estim.pi0(p, pi0.method="abh")
 r$pi0
+
+#compare with one minus the proportion of human proteins 
+prop_human=sum(LFQRatio2$Organism=="human")/length(LFQRatio2$Organism)
+pi0_true=1-prop_human
+pi0_true
 
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

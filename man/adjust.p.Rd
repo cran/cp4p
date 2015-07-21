@@ -11,7 +11,7 @@ adjust.p(p, pi0.method = 1, alpha = 0.05, nbins = 20, pz = 0.05)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{p}{Numeric vector of raw p-values.}
-  \item{pi0.method}{Numeric value between 0 and 1 corresponding to the proportion of true null hypotheses (non-differentially abundant proteins or peptides), or the name of an estimation method for this proportion among \code{"st.boot"}, \code{"st.spline"}, \code{"langaas"}, \code{"jiang"}, \code{"histo"}, \code{"pounds"}, \code{"abh"} or \code{"slim"} (see function \code{estim.pi0} for details). The two-stage Benjamini and Hochberg procedure (Benjamini et al. (2006)) is also available according to an expected FDR given by the \code{alpha} parameter (write \code{pi0.method="bky"}). Default is 1 (classical Benjamini and Hochberg procedure (1995) is performed in this case).}
+  \item{pi0.method}{Numeric value between 0 and 1 corresponding to the proportion of true null hypotheses (non-differentially abundant proteins or peptides), or the name of an estimation method for this proportion among \code{"st.boot"}, \code{"st.spline"}, \code{"langaas"}, \code{"jiang"}, \code{"histo"}, \code{"pounds"}, \code{"abh"} or \code{"slim"} (see function \code{\link{estim.pi0}} for details). The two-stage Benjamini and Hochberg procedure (Benjamini et al. (2006)) is also available according to an expected FDR given by the \code{alpha} parameter (write \code{pi0.method="bky"}). Default is 1 (classical Benjamini and Hochberg procedure (1995) is performed in this case).}
   \item{alpha}{A nominal type I error rate used for estimating the proportion of true null hypotheses (non-differentially abundant proteins or peptides) in the two-stage Benjamini and Hochberg procedure (used only if \code{pi0.method="bky"}). Default is 0.05.}
   \item{nbins}{Number of bins. Parameter used for the \code{"jiang"} and  \code{"histo"} methods in \code{\link{estim.pi0}}. Default is 20.}
   \item{pz}{P-value threshold such as p-values below are associated to false null hypotheses. Used for the \code{"slim"} method in \code{\link{estim.pi0}}. Default is 0.05.}
@@ -24,8 +24,8 @@ The adjusted p-values of the Benjamini and Hochberg procedure (1995) and of the 
 }
 \value{
 A list composed of :
-  \item{adjp}{A matrix of raw and adjusted p-values with rows corresponding to each test. First column corresponds to raw p-values and second column to adjusted p-values.}
   \item{pi0}{The proportion of true null hypotheses (non-differentially abundant proteins or peptides) used to adjust p-values.}
+  \item{adjp}{A matrix of raw and adjusted p-values with rows corresponding to each test. First column corresponds to raw p-values and second column to adjusted p-values.}
 }
 \references{
 Y. Benjamini and Y. Hochberg. Controlling the false discovery rate: a practical and powerful approach to multiple testing. Journal of the Royal Statistical Society. Series B (Methodological), 289-300, 1995.
@@ -49,8 +49,9 @@ Quentin Giai Gianetto <quentin2g@yahoo.fr>
 \code{\link{estim.pi0}}, \code{\link{calibration.plot}}
 }
 \examples{
-#simulate a vector of p-values
-p=c(rbeta(500,1,20),runif(500,0,1))
+#get p-values
+data(LFQRatio2)
+p=LFQRatio2[,7]
 
 #adjust p-values by estimating the proportion of true null hypotheses 
 #with the "pounds" method.
