@@ -76,9 +76,9 @@ r$pi0
 #Estimate of the differentially abundant protein concentration 
 #(the closer to one, the better)
 r$h1.concentration
-#Estimate of the "divergence to uniformity" quantity 
+#Estimate of the "uniformity underestimation" quantity 
 #(If null, pi0 is not underestimated.)
-r$div.to.uniform
+r$unif.under
 
 #Plot of the graph using the "slim" method
 r=calibration.plot(p, pi0.method="slim")
