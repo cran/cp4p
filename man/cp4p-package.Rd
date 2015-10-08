@@ -17,7 +17,7 @@ In addition, the package allows performing an adequately chosen adaptive FDR con
 \tabular{ll}{
 Package: \tab cp4p\cr
 Type: \tab Package\cr
-Version: \tab 0.3.1\cr
+Version: \tab 0.3.2\cr
 License: \tab GPL-3\cr
 Depends:\tab multtest, qvalue, limma, MESS, graphics, stats\cr
 }

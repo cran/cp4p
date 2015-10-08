@@ -10,15 +10,12 @@ calibration.plot=function(p, pi0.method="pounds",  nbins = 20, pz=0.05){
   fc=Fr(abs);
   AUC=NULL;
   AUC2=NULL;
-  plot(abs,fc,ty="l",xlab="1-p.value",ylab="Cumulative Distribution Function of 1-p.value",main="Calibration Plot",lwd=2,ylim=c(0,1.05));
+  plot(abs,fc,ty="l",xlab="1-p.value",ylab="Cumulative Distribution Function of 1-p.value",lwd=2,ylim=c(0,1.05));
   if (is.numeric(pi0.method)==TRUE){
     if (pi0.method<=1 && pi0.method>=0){
       pi0=pi0.method;
-      dif=fc-abs;
-      #Red area when CDF of 1-p is superior to the straight line y=x
-      x.bons=c(abs[dif>=0],abs[dif>=0][1]);
-      y.bons=c(fc[dif>=0],fc[dif>=0][1]);
-      polygon(x = x.bons, y = y.bons, col = "red",border="white");
+      title(main=paste("Calibration Plot - pi0 =",pi0.method))
+
       #straight line y=pi0*x
       dr=as.numeric(pi0)*abs;
       dif=abs-fc;
@@ -37,8 +34,8 @@ calibration.plot=function(p, pi0.method="pounds",  nbins = 20, pz=0.05){
       i=lfc;
       while (sign(dif[i-1])==sign(dif[i])){i=i-1;}
       #Green area
-      x.bons=c((i:lfc)/lfc,1,i/lfc);
-      y.bons=c(fc[i:lfc],pi0,fc[i]);
+      x.bons=c((i:lfc)/lfc,1,i/lfc,i/lfc);
+      y.bons=c(fc[i:lfc],pi0,pi0*i/lfc,fc[i]);
       polygon(x = x.bons, y = y.bons, col = "darkseagreen1",border="darkseagreen1");  
       #Compute DA protein concentration
       if (i<lfc){auc1=auc(abs[i:lfc],dif[i:lfc]);}else{auc1=0;}
@@ -77,13 +74,11 @@ calibration.plot=function(p, pi0.method="pounds",  nbins = 20, pz=0.05){
           if (i==7){lines(abs,as.numeric(pi0[i])*abs,ty="l",col="deepskyblue", lty=i,lwd=2);name=c(name,"abh");}
           if (i==8){lines(abs,as.numeric(pi0[i])*abs,ty="l",col="blue", lty=i,lwd=2);name=c(name,"slim");}
         }
+        title(main="Calibration Plot - All methods");
         legend("topleft",name,col=c("chartreuse1","chartreuse3","darkgreen","darkorange","darkorange3","red","deepskyblue","blue"),lty=1:8,lwd=rep(2,8),title="pi0.method");
       }else{
-        dif=fc-abs;
-        #Red area when CDF of 1-p is superior to the straight line y=x
-        x.bons=c(abs[dif>=0],abs[dif>=0][1]);
-        y.bons=c(fc[dif>=0],fc[dif>=0][1]);
-        polygon(x = x.bons, y = y.bons, col = "red",border="white");
+        title(main=paste("Calibration Plot -",pi0.method,"method"));
+        
         #straight line y=pi0*x
         dr=as.numeric(pi0)*abs;
         dif=abs-fc;
@@ -102,8 +97,8 @@ calibration.plot=function(p, pi0.method="pounds",  nbins = 20, pz=0.05){
         i=lfc;
         while (sign(dif[i-1])==sign(dif[i])){i=i-1;}
         #Green area
-        x.bons=c((i:lfc)/lfc,1,i/lfc);
-        y.bons=c(fc[i:lfc],pi0,fc[i]);
+        x.bons=c((i:lfc)/lfc,1,i/lfc,i/lfc);
+        y.bons=c(fc[i:lfc],pi0,pi0*i/lfc,fc[i]);
         polygon(x = x.bons, y = y.bons, col = "darkseagreen1",border="darkseagreen1");  
         #Compute DA protein concentration
         if (i<lfc){auc1=auc(abs[i:lfc],dif[i:lfc]);}else{auc1=0;}

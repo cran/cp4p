@@ -14,7 +14,7 @@ calibration.plot(p, pi0.method = "pounds", nbins = 20, pz = 0.05)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{p}{Numeric vector of raw p-values.}
+  \item{p}{Numeric vector of raw p-values. Raw p-values are assumed without missing values, and between 0 and 1.}
   \item{pi0.method}{
   Numeric value between 0 and 1 corresponding to the proportion of true null hypotheses if known by the user, or the name of an estimation method among \code{"st.boot"}, \code{"st.spline"}, \code{"langaas"}, \code{"jiang"}, \code{"histo"}, \code{"pounds"}, \code{"abh"} or \code{"slim"} (see function \code{\link{estim.pi0}} for details). Default is \code{"pounds"}. If \code{pi0.method="ALL"}, a plot allowing the comparison of the eight estimation methods is displayed.
 	}

@@ -18,7 +18,7 @@ estim.pi0(p, pi0.method = "ALL", nbins = 20, pz = 0.05)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{p}{Numeric vector of raw p-values.}
+  \item{p}{Numeric vector of raw p-values. Raw p-values are assumed without missing values, and between 0 and 1.}
   \item{pi0.method}{Name of an estimation method for the proportion of true null hypotheses among \code{"st.boot"}, \code{"st.spline"}, \code{"langaas"}, \code{"jiang"}, \code{"histo"}, \code{"pounds"}, \code{"abh"} or \code{"slim"}. Default is \code{"ALL"}: all the eight estimation methods are performed simultaneously.}
   \item{nbins}{Number of bins. Parameter used for the \code{"jiang"} and  \code{"histo"} methods. Default is 20.}
   \item{pz}{P-value threshold such as p-values below are associated to false null hypotheses. Used for the \code{"slim"} method. Wang, Tuominen and Tsai (2011) suggest to take a value between 0.01 and 0.1. Default is 0.05.}

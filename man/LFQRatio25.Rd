@@ -13,9 +13,9 @@ From a statistical viewpoint, the goal is to find which proteins are differentia
 \usage{data(LFQRatio25)}
 \format{A data frame with the 1472 identified proteins in row. 
 
-Columns \code{A.R1}, \code{A.R2} and \code{A.R3} correspond to the (numeric) abundance values of proteins in the three biological replicates of condition A. 
+Columns \code{A.R1}, \code{A.R2} and \code{A.R3} correspond to the (numeric) abundance values of proteins in the three replicates of condition A. 
 
-Columns \code{B.R1}, \code{B.R2} and \code{B.R3} correspond to the (numeric) abundance values of proteins in the three biological replicates of condition B. 
+Columns \code{B.R1}, \code{B.R2} and \code{B.R3} correspond to the (numeric) abundance values of proteins in the three replicates of condition B. 
 
 Column \code{Welch.test.pval} contains the p-values of the Welch t-test between condition A and condition B computed with the Perseus software.
 

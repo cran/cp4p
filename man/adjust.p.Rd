@@ -10,7 +10,7 @@ adjust.p(p, pi0.method = 1, alpha = 0.05, nbins = 20, pz = 0.05)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{p}{Numeric vector of raw p-values.}
+  \item{p}{Numeric vector of raw p-values. Raw p-values are assumed without missing values, and between 0 and 1.}
   \item{pi0.method}{Numeric value between 0 and 1 corresponding to the proportion of true null hypotheses (non-differentially abundant proteins or peptides), or the name of an estimation method for this proportion among \code{"st.boot"}, \code{"st.spline"}, \code{"langaas"}, \code{"jiang"}, \code{"histo"}, \code{"pounds"}, \code{"abh"} or \code{"slim"} (see function \code{\link{estim.pi0}} for details). The two-stage Benjamini and Hochberg procedure (Benjamini et al. (2006)) is also available according to an expected FDR given by the \code{alpha} parameter (write \code{pi0.method="bky"}). Default is 1 (classical Benjamini and Hochberg procedure (1995) is performed in this case).}
   \item{alpha}{A nominal type I error rate used for estimating the proportion of true null hypotheses (non-differentially abundant proteins or peptides) in the two-stage Benjamini and Hochberg procedure (used only if \code{pi0.method="bky"}). Default is 0.05.}
   \item{nbins}{Number of bins. Parameter used for the \code{"jiang"} and  \code{"histo"} methods in \code{\link{estim.pi0}}. Default is 20.}
