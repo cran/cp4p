@@ -17,7 +17,7 @@ In addition, the package allows performing an adequately chosen adaptive FDR con
 \tabular{ll}{
 Package: \tab cp4p\cr
 Type: \tab Package\cr
-Version: \tab 0.3.2\cr
+Version: \tab 0.3.3\cr
 License: \tab GPL-3\cr
 Depends:\tab multtest, qvalue, limma, MESS, graphics, stats\cr
 }
@@ -32,12 +32,12 @@ Third, the function \code{\link{adjust.p}} allows obtaining adjusted p-values in
 Two proteomic datasets named \code{\link{LFQRatio2}} and \code{\link{LFQRatio25}} allow to use these functions in a concrete framework where the proportion of non-differentially abundant proteins is known.
 }
 \author{
-Quentin Giai Gianetto, Florence Combes, Yohann Couté, Christophe Bruley, Thomas Burger
+Quentin Giai Gianetto, Florence Combes, Claire Ramus, Christophe Bruley, Yohann Couté, Thomas Burger
 
 Maintainer: Quentin Giai Gianetto <quentin2g@yahoo.fr>
 }
 \references{
-Q. Giai Gianetto, F. Combes, Y. Couté, C. Bruley and T. Burger.  Calibration Plot for Proteomics (cp4p) : a graphical tool to verify FDR assumptions in quantitative experiments. in submission, 2015.
+Q. Giai Gianetto, F. Combes, C. Ramus, C. Bruley, Y. Couté and T. Burger. Calibration Plot for Proteomics (cp4p) : A graphical tool to visually check the assumptions underlying FDR control in quantitative experiments. To appear in Proteomics, 2015.
 }
 %~~ Optionally other standard keywords, one per line, from file KEYWORDS in the ~~
 %~~ R documentation directory ~~

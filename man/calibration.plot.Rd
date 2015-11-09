@@ -32,7 +32,6 @@ In addition, two other measures are given in the caption of the graphic. Each ha
 The first measure corresponds to one minus the ratio between the green area and the grey area (referred to as "differentially abundant protein concentration"). The closer to 100\% this measure is, the smaller the false nondiscovery rate is expected. 
 
 The second measure corresponds to the total red area observed on the graph (referred to as "uniformity underestimation"). The smaller this measure is, the more the proportion of true null hypotheses is expected to be not under-estimated (so as to get a conservative p-value adjustment).
-
 }
 \value{
 A list composed of :
@@ -41,9 +40,7 @@ A list composed of :
 \item{unif.under}{Numeric value corresponding to the total red area observed on the graph (multiplied by 100). NULL if \code{pi0.method="ALL"}.}
 }
 \references{
-%C. Genovese and L. Wasserman.  Operating characteristics and extensions of the false discovery rate procedure. Journal of the Royal Statistical Society: Series B (Statistical Methodology), 64(3):499-517, 2002.
-
-Q. Giai Gianetto, F. Combes, Y. Couté, C. Bruley and T. Burger. Calibration Plot for Proteomics (cp4p) : a graphical tool to verify FDR assumptions in quantitative experiments. in submission, 2015.
+Q. Giai Gianetto, F. Combes, C. Ramus, C. Bruley, Y. Couté and T. Burger. Calibration Plot for Proteomics (cp4p) : A graphical tool to visually check the assumptions underlying FDR control in quantitative experiments. To appear in Proteomics, 2015.
 
 T. Schweder and E. Spjotvoll. Plots of p-values to evaluate many tests simultaneously. Biometrika, 69(3):493-502, 1982.
 }
@@ -54,8 +51,7 @@ Quentin Giai Gianetto <quentin2g@yahoo.fr>
 %%  ~~further notes~~
 %}
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
+%% ~Make other sections like Warning with \section{Warning }{....} 
 \seealso{
 \code{\link{estim.pi0}}
 }
