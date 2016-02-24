@@ -134,32 +134,32 @@ estim.pi0=function (p, pi0.method = "ALL",  nbins = 20, pz = 0.05){
     if (!inherits(try(qvalue(p,pi0.method="smoother")$pi0,FALSE), "try-error")==TRUE){
       Storey.S=qvalue(p,pi0.method="smoother");
       pi0.Storey.Spline=Storey.S$pi0;
-    }else{cat("Warning: st.spline does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.Storey.Spline=1;}
+    }else{warning("Warning: st.spline does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.Storey.Spline=1;}
     if (!inherits(try(qvalue(p,pi0.method="bootstrap")$pi0,FALSE), "try-error")==TRUE){
       Storey.B=qvalue(p,pi0.method="bootstrap");
       pi0.Storey.Boot=Storey.B$pi0
-    }else{cat("Warning: st.boot does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.Storey.Boot=1;}
+    }else{warning("Warning: st.boot does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.Storey.Boot=1;}
     if (!inherits(try(convest(p),FALSE), "try-error")==TRUE){
       Langaas=convest(p);
       pi0.Langaas=Langaas[1];
-    }else{cat("Warning: langaas does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.Langaas=1;}
+    }else{warning("Warning: langaas does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.Langaas=1;}
     if (!inherits(try(pi0.histo(p,nbins),FALSE), "try-error")==TRUE){
       pi0.Histo=pi0.histo(p,nbins);
-      if (pi0.Histo>1){cat("Warning: histo does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.Histo=1;}
-    }else{cat("Warning: histo does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.Histo=1;}
+      if (pi0.Histo>1){warning("Warning: histo does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.Histo=1;}
+    }else{warning("Warning: histo does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.Histo=1;}
     if (!inherits(try(pi0.jiang(p,nbins),FALSE), "try-error")==TRUE){
       pi0.Jiang=pi0.jiang(p,nbins);
-    }else{cat("Warning: jiang does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.Jiang=1;}
+    }else{warning("Warning: jiang does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.Jiang=1;}
     if (!inherits(try(min(1,2*mean(p)),FALSE), "try-error")==TRUE){
       pi0.Pounds=min(1,2*mean(p));
-    }else{cat("Warning: pounds does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.Pounds=1;}
+    }else{warning("Warning: pounds does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.Pounds=1;}
     if (!inherits(try(pi0.abh(p),FALSE), "try-error")==TRUE){
       pi0.ABH=pi0.abh(p);
-    }else{cat("Warning: abh does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.ABH=1;}
+    }else{warning("Warning: abh does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.ABH=1;}
     if (!inherits(try(pi0.slim(p, Pz=pz),FALSE), "try-error")==TRUE){
       slim=pi0.slim(p, Pz=pz);
       pi0.SLIM=slim[[1]];
-    }else{cat("Warning: slim does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.SLIM=1;}
+    }else{warning("Warning: slim does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.SLIM=1;}
     res=data.frame(pi0.Storey.Spline, pi0.Storey.Boot, pi0.Jiang, pi0.Histo, pi0.Langaas, pi0.Pounds, pi0.ABH, pi0.SLIM);
     return(list(pi0.est=res)); 
   }
@@ -167,54 +167,54 @@ estim.pi0=function (p, pi0.method = "ALL",  nbins = 20, pz = 0.05){
     if (!inherits(try(qvalue(p,pi0.method="smoother")$pi0,FALSE), "try-error")==TRUE){
       Storey.S=qvalue(p,pi0.method="smoother");
       pi0.Storey.Spline=Storey.S$pi0;
-    }else{cat("Warning: st.spline does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.Storey.Spline=1;}
+    }else{warning("Warning: st.spline does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.Storey.Spline=1;}
     return(list(pi0.Storey.Spline=pi0.Storey.Spline)) ; 
   }
   if (pi0.method=="st.boot"){
     if (!inherits(try(qvalue(p,pi0.method="bootstrap")$pi0,FALSE), "try-error")==TRUE){
       Storey.B=qvalue(p,pi0.method="bootstrap");
       pi0.Storey.Boot=Storey.B$pi0
-    }else{cat("Warning: st.boot does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.Storey.Boot=1;}
+    }else{warning("Warning: st.boot does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.Storey.Boot=1;}
     return(list(pi0.Storey.Boot=pi0.Storey.Boot)) ; 
   }
   if (pi0.method=="langaas"){
     if (!inherits(try(convest(p),FALSE), "try-error")==TRUE){
       Langaas=convest(p);
       pi0.Langaas=Langaas[1];
-    }else{cat("Warning: langaas does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.Langaas=1;}
+    }else{warning("Warning: langaas does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.Langaas=1;}
     return(list(pi0.Langaas=pi0.Langaas)) ; 
   }
   if (pi0.method=="histo"){
     if (!inherits(try(pi0.histo(p,nbins),FALSE), "try-error")==TRUE){
       pi0.Histo=pi0.histo(p,nbins);
-      if (pi0.Histo>1){cat("Warning: histo does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.Histo=1;}
-    }else{cat("Warning: histo does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.Histo=1;}
+      if (pi0.Histo>1){warning("Warning: histo does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.Histo=1;}
+    }else{warning("Warning: histo does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.Histo=1;}
     return(list(pi0.Histo=pi0.Histo)) ; 
   }
   if (pi0.method=="jiang"){
     if (!inherits(try(pi0.jiang(p,nbins),FALSE), "try-error")==TRUE){
       pi0.Jiang=pi0.jiang(p,nbins);
-    }else{cat("Warning: jiang does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.Jiang=1;}
+    }else{warning("Warning: jiang does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.Jiang=1;}
     return(list(pi0.Jiang=pi0.Jiang)) ; 
   }
   if (pi0.method=="pounds"){
     if (!inherits(try(min(1,2*mean(p)),FALSE), "try-error")==TRUE){
       pi0.Pounds=min(1,2*mean(p));
-    }else{cat("Warning: pounds does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.Pounds=1;}
+    }else{warning("Warning: pounds does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.Pounds=1;}
     return(list(pi0.Pounds=pi0.Pounds)) ; 
   }
   if (pi0.method=="abh"){
     if (!inherits(try(pi0.abh(p),FALSE), "try-error")==TRUE){
       pi0.ABH=pi0.abh(p);
-    }else{cat("Warning: abh does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.ABH=1;}
+    }else{warning("Warning: abh does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.ABH=1;}
     return(list(pi0.ABH=pi0.ABH)) ; 
   }
   if (pi0.method=="slim"){
     if (!inherits(try(pi0.slim(p, Pz=pz),FALSE), "try-error")==TRUE){
       slim=pi0.slim(p, Pz=pz);
       pi0.SLIM=slim[[1]];
-    }else{cat("Warning: slim does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.SLIM=1;}
+    }else{warning("Warning: slim does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.SLIM=1;}
     return(list(pi0.SLIM=pi0.SLIM)) ; 
   }
- }else{stop("\n Error in input pi0.method:\n Please write the name of an estimation method among st.spline, st.boot, jiang, histo, langaas, pounds, abh, slim or ALL.\n");}
+ }else{warning("\n Error in input pi0.method:\n Please write the name of an estimation method among st.spline, st.boot, jiang, histo, langaas, pounds, abh, slim or ALL.\n");}
 }

@@ -2,7 +2,7 @@
 \alias{LFQRatio2}
 \docType{data}
 \title{Dataset "LFQRatio2"}
-\description{This dataset is the final outcome of a quantitative mass spectrometry-based proteomic analysis of two samples containing different concentrations of 48 human proteins (UPS1 standard from Sigma-Aldrich) within a constant yeast background. It contains the abundance values of the different human and yeast proteins identified and quantified in these two conditions. The conditions A and B represent the measured abundances of proteins when respectively 10fmol and 5fmol of UPS1 human proteins were mixed with the yeast extract before mass spectrometry analyses. Three technical replicates were acquired for each condition.
+\description{This dataset is the final outcome of a quantitative mass spectrometry-based proteomic analysis of two samples containing different concentrations of 48 human proteins (UPS1 standard from Sigma-Aldrich) within a constant yeast background (see Giai Gianetto et al. (2016) for details). It contains the abundance values of the different human and yeast proteins identified and quantified in these two conditions. The conditions A and B represent the measured abundances of proteins when respectively 10fmol and 5fmol of UPS1 human proteins were mixed with the yeast extract before mass spectrometry analyses. Three technical replicates were acquired for each condition.
 
 To identify and quantify proteins, spectra were searched using MaxQuant (version 1.5.1.2) against the Uniprot database, the UPS database and the frequently observed contaminants database. Maximum false discovery rates were set to 0.01 at peptide and protein levels by employing a reverse database strategy.
 
@@ -27,6 +27,8 @@ Column \code{Majority.protein.IDs} contains the IDs of proteins.
 Cox J., Hein M.Y., Luber C.A., Paron I., Nagaraj N., Mann M. Accurate proteome-wide label-free quantification by delayed normalization and maximal peptide ratio extraction, termed MaxLFQ. Mol Cell Proteomics. 2014 Sep, 13(9):2513-26.
 
 Deeb S.J., D'Souza R.C., Cox J., Schmidt-Supprian M., Mann M. Super-SILAC allows classification of diffuse large B-cell lymphoma subtypes by their protein expression profiles. Mol Cell Proteomics. 2012 May, 11(5):77-89.
+
+Giai Gianetto, Q., Combes, F., Ramus, C., Bruley, C., Couté, Y., Burger, T. (2016). Calibration plot for proteomics: A graphical tool to visually check the assumptions underlying FDR control in quantitative experiments. Proteomics, 16(1), 29-32.
 }
 \examples{data(LFQRatio2)
 

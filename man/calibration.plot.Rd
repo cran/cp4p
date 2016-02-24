@@ -40,9 +40,9 @@ A list composed of :
 \item{unif.under}{Numeric value corresponding to the total red area observed on the graph (multiplied by 100). NULL if \code{pi0.method="ALL"}.}
 }
 \references{
-Q. Giai Gianetto, F. Combes, C. Ramus, C. Bruley, Y. Couté and T. Burger. Calibration Plot for Proteomics (cp4p) : A graphical tool to visually check the assumptions underlying FDR control in quantitative experiments. To appear in Proteomics, 2015.
+Giai Gianetto, Q., Combes, F., Ramus, C., Bruley, C., Couté, Y., Burger, T. (2016). Calibration plot for proteomics: A graphical tool to visually check the assumptions underlying FDR control in quantitative experiments. Proteomics, 16(1), 29-32.
 
-T. Schweder and E. Spjotvoll. Plots of p-values to evaluate many tests simultaneously. Biometrika, 69(3):493-502, 1982.
+Schweder, T., Spjotvoll, E. (1982). Plots of p-values to evaluate many tests simultaneously. Biometrika, 69(3), 493-502.
 }
 \author{
 Quentin Giai Gianetto <quentin2g@yahoo.fr>

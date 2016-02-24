@@ -57,7 +57,7 @@ calibration.plot=function(p, pi0.method="pounds",  nbins = 20, pz=0.05){
       lines(abs,dr,lwd=2,col="blue",lty=1);
       lines(abs,fc,lwd=2);
       text(0,0.95,paste("Non-DA protein proportion: ",floor(pi0*1000)/10, "%"),col="blue",pos=4);
-    }else{stop("\n Error in input pi0.method:\n Please write a numeric value between 0 and 1 or the name of an estimation method among st.spline, st.boot, jiang, histo, langaas, pounds, abh, slim or ALL.\n");}
+    }else{warning("\n Error in input pi0.method:\n Please write a numeric value between 0 and 1 or the name of an estimation method among st.spline, st.boot, jiang, histo, langaas, pounds, abh, slim or ALL.\n");}
   }
   if (is.numeric(pi0.method)==FALSE){
     if (pi0.method=="ALL"||pi0.method=="st.spline"||pi0.method=="st.boot"||pi0.method=="jiang"||pi0.method=="histo"||pi0.method=="langaas"||pi0.method=="pounds"||pi0.method=="abh"||pi0.method=="slim"){
@@ -121,7 +121,7 @@ calibration.plot=function(p, pi0.method="pounds",  nbins = 20, pz=0.05){
         lines(abs,fc,lwd=2);
         text(0,0.95,paste("Non-DA protein proportion: ",floor(pi0*1000)/10, "%"),col="blue",pos=4);
       }
-    }else{stop("\n Error in input pi0.method:\n Please write a numeric value between 0 and 1 or the name of an estimation method among st.spline, st.boot, jiang, histo, langaas, pounds, abh, slim or ALL.\n");}
+    }else{warning("\n Error in input pi0.method:\n Please write a numeric value between 0 and 1 or the name of an estimation method among st.spline, st.boot, jiang, histo, langaas, pounds, abh, slim or ALL.\n");}
   }
   return(list(pi0=pi0,h1.concentration=AUC,unif.under=AUC2*100));
 }

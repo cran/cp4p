@@ -37,8 +37,7 @@ Quentin Giai Gianetto, Florence Combes, Claire Ramus, Christophe Bruley, Yohann 
 Maintainer: Quentin Giai Gianetto <quentin2g@yahoo.fr>
 }
 \references{
-Q. Giai Gianetto, F. Combes, C. Ramus, C. Bruley, Y. Couté and T. Burger. Calibration Plot for Proteomics (cp4p) : A graphical tool to visually check the assumptions underlying FDR control in quantitative experiments. To appear in Proteomics, 2015.
-}
+Giai Gianetto, Q., Combes, F., Ramus, C., Bruley, C., Couté, Y., Burger, T. (2016). Calibration plot for proteomics: A graphical tool to visually check the assumptions underlying FDR control in quantitative experiments. Proteomics, 16(1), 29-32.}
 %~~ Optionally other standard keywords, one per line, from file KEYWORDS in the ~~
 %~~ R documentation directory ~~
 %\keyword{false discovery rate}
