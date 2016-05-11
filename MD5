@@ -1,8 +1,8 @@
-6deeeed029b60ae9ec673b3c028aaefe *DESCRIPTION
+4ce1c72f5004cabd9ac470e97964e389 *DESCRIPTION
 bfd3a5444f5e6b5bdcdd3a926874119d *NAMESPACE
-262e88bacfec7fe287baff2679ca472f *R/adjust_p.R
-f97c4bf84976f5d8a87992063731b49e *R/calibration_plot.R
-30ad1cf079700a903654009123ecbe88 *R/estim_pi0.R
+f47a2d4ed8de985a33799b3f05b95e22 *R/adjust_p.R
+1776727a29e36037654cdbfd8373b523 *R/calibration_plot.R
+2ea78e68ebfa7899355fc86b05b877a7 *R/estim_pi0.R
 f9fc3563b7bc58958364958e58585be5 *data/LFQRatio2.rda
 fc1327542a888327fa41cf7ead301007 *data/LFQRatio25.rda
 dc80129a6eb5fade39abdf68cd3d5780 *data/datalist/LFQRatio2.rda
@@ -11,6 +11,6 @@ a148f4c700162cbb8be6d5af123f9392 *inst/tutorial-cp4p.pdf
 f82179eba947665566889ad0811523cd *man/LFQRatio2.Rd
 076fdbae00fcdcd88ac901e3e8a268b7 *man/LFQRatio25.Rd
 03080fcbb685f1ed2028cb06186f26e1 *man/adjust.p.Rd
-44341616485852c4869a7815404d96a4 *man/calibration.plot.Rd
-7c9f71542bc92d40291e33014d24f8ef *man/cp4p-package.Rd
-4f7cdd022c3d52f0f1082f0a96ba33fe *man/estim.pi0.Rd
+e95b6441113231379abd71645a7c0915 *man/calibration.plot.Rd
+732e601021be8c74dda2ec144a53ecdd *man/cp4p-package.Rd
+329db4b949aaa77962fdfcdcdadd0c49 *man/estim.pi0.Rd

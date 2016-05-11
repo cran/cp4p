@@ -47,8 +47,11 @@ This function allows to estimate the proportion of true null hypotheses followin
  \tab \cr
 \code{"slim"}\tab the method of Wang, Tuominen and Tsai (2011) using a sliding linear model.\cr
  \tab The default tuning suggested by Wang, Tuominen and Tsai (2011) is used.\cr
- \tab Using their notations, lambda1 is fixed to 0.1, n to 10 and B to 100.\cr
+ \tab Using their notations, lambda1 is fixed to 0.1, n to 10 and B to 100.
 }
+To take into account of right censorship on the vector of p-values, each p-value is divided by the maximum p-value present in \code{p}. Accordingly, the p-values of the true null hypotheses are assumed uniformly distributed between 0 and this maximum. This kind of censorship happens in proteomics when a first thresholding is performed on the fold-changes. 
+
+If you want to assume that the p-values are uniformly distributed between 0 and 1, replace \code{p} by \code{c(p,1)} when using \code{estim.pi0}. 
 }
 
 \value{

@@ -1,4 +1,4 @@
-\name{calibration.plot}
+﻿\name{calibration.plot}
 \alias{calibration.plot}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
@@ -27,11 +27,13 @@ This function provides a graph which displays the cumulative distribution functi
 
 The blue straight line has a slope equals to the proportion of true null hypotheses (estimated by \code{\link{estim.pi0}}) that is recalled in the caption of the plot. It is close to the black curve for small 1-pvalues if the p-values are independently and uniformly distributed under the null hypothesis.
 
-In addition, two other measures are given in the caption of the graphic. Each has a color that matches that of various areas of the plot and should be carefully consider to assess the well-calibration of p-values (see Giai Gianetto et al. (2015) for details). 
+In addition, two other measures are given in the caption of the graphic. Each has a color that matches that of various areas of the plot and should be carefully consider to assess the well-calibration of p-values (see Giai Gianetto et al. (2016) for details). 
 
 The first measure corresponds to one minus the ratio between the green area and the grey area (referred to as "differentially abundant protein concentration"). The closer to 100\% this measure is, the smaller the false nondiscovery rate is expected. 
 
 The second measure corresponds to the total red area observed on the graph (referred to as "uniformity underestimation"). The smaller this measure is, the more the proportion of true null hypotheses is expected to be not under-estimated (so as to get a conservative p-value adjustment).
+
+Supplementary theoretical justifications on these measures can be found in the tutorial available in the supplementary material of Giai Gianetto et al. (2016).
 }
 \value{
 A list composed of :

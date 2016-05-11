@@ -12,12 +12,12 @@ Concretely, it allows estimating the proportion of true null hypotheses (i.e. pr
 as well as checking whether the p-values are adequately distributed for further FDR  control. 
 
 In addition, the package allows performing an adequately chosen adaptive FDR control procedure to get adjusted p-values.  
+
+A tutorial giving a practical introduction to this package is available in the supplementary material of Giai Gianetto et al. (2016).
 }
 \details{
 \tabular{ll}{
 Package: \tab cp4p\cr
-Type: \tab Package\cr
-Version: \tab 0.3.3\cr
 License: \tab GPL-3\cr
 Depends:\tab multtest, qvalue, limma, MESS, graphics, stats\cr
 }

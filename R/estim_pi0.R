@@ -4,8 +4,9 @@
 ###################################################
 
 estim.pi0=function (p, pi0.method = "ALL",  nbins = 20, pz = 0.05){
-  #library(pi0)
-  #library(qvalue)
+ #dilation of p-values
+ p=p/max(p);
+ #
  if (pi0.method=="ALL"||pi0.method=="st.spline"||pi0.method=="st.boot"||pi0.method=="jiang"||pi0.method=="histo"||pi0.method=="langaas"||pi0.method=="pounds"||pi0.method=="abh"||pi0.method=="slim"){
     
   ######################################
@@ -132,15 +133,15 @@ estim.pi0=function (p, pi0.method = "ALL",  nbins = 20, pz = 0.05){
   
   if (pi0.method=="ALL"){
     if (!inherits(try(qvalue(p,pi0.method="smoother")$pi0,FALSE), "try-error")==TRUE){
-      Storey.S=qvalue(p,pi0.method="smoother");
+      Storey.S=qvalue::qvalue(p,pi0.method="smoother");
       pi0.Storey.Spline=Storey.S$pi0;
     }else{warning("Warning: st.spline does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.Storey.Spline=1;}
     if (!inherits(try(qvalue(p,pi0.method="bootstrap")$pi0,FALSE), "try-error")==TRUE){
-      Storey.B=qvalue(p,pi0.method="bootstrap");
+      Storey.B=qvalue::qvalue(p,pi0.method="bootstrap");
       pi0.Storey.Boot=Storey.B$pi0
     }else{warning("Warning: st.boot does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.Storey.Boot=1;}
     if (!inherits(try(convest(p),FALSE), "try-error")==TRUE){
-      Langaas=convest(p);
+      Langaas=limma::convest(p);
       pi0.Langaas=Langaas[1];
     }else{warning("Warning: langaas does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.Langaas=1;}
     if (!inherits(try(pi0.histo(p,nbins),FALSE), "try-error")==TRUE){
@@ -165,21 +166,21 @@ estim.pi0=function (p, pi0.method = "ALL",  nbins = 20, pz = 0.05){
   }
   if (pi0.method=="st.spline"){
     if (!inherits(try(qvalue(p,pi0.method="smoother")$pi0,FALSE), "try-error")==TRUE){
-      Storey.S=qvalue(p,pi0.method="smoother");
+      Storey.S=qvalue::qvalue(p,pi0.method="smoother");
       pi0.Storey.Spline=Storey.S$pi0;
     }else{warning("Warning: st.spline does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.Storey.Spline=1;}
     return(list(pi0.Storey.Spline=pi0.Storey.Spline)) ; 
   }
   if (pi0.method=="st.boot"){
     if (!inherits(try(qvalue(p,pi0.method="bootstrap")$pi0,FALSE), "try-error")==TRUE){
-      Storey.B=qvalue(p,pi0.method="bootstrap");
+      Storey.B=qvalue::qvalue(p,pi0.method="bootstrap");
       pi0.Storey.Boot=Storey.B$pi0
     }else{warning("Warning: st.boot does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.Storey.Boot=1;}
     return(list(pi0.Storey.Boot=pi0.Storey.Boot)) ; 
   }
   if (pi0.method=="langaas"){
     if (!inherits(try(convest(p),FALSE), "try-error")==TRUE){
-      Langaas=convest(p);
+      Langaas=limma::convest(p);
       pi0.Langaas=Langaas[1];
     }else{warning("Warning: langaas does not work correctly (pi0 is thus fixed to 1)!!\n\n");pi0.Langaas=1;}
     return(list(pi0.Langaas=pi0.Langaas)) ; 
