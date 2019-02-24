@@ -1,12 +1,10 @@
-4ce1c72f5004cabd9ac470e97964e389 *DESCRIPTION
-bfd3a5444f5e6b5bdcdd3a926874119d *NAMESPACE
+05fc26f208ad86bcba53babe01ea625c *DESCRIPTION
+52411c26c68137bfc06561b06ca447f4 *NAMESPACE
 f47a2d4ed8de985a33799b3f05b95e22 *R/adjust_p.R
 1776727a29e36037654cdbfd8373b523 *R/calibration_plot.R
 2ea78e68ebfa7899355fc86b05b877a7 *R/estim_pi0.R
 f9fc3563b7bc58958364958e58585be5 *data/LFQRatio2.rda
 fc1327542a888327fa41cf7ead301007 *data/LFQRatio25.rda
-dc80129a6eb5fade39abdf68cd3d5780 *data/datalist/LFQRatio2.rda
-6f1734595f380defe51cf228cba7b3d5 *data/datalist/LFQRatio25.rda
 a148f4c700162cbb8be6d5af123f9392 *inst/tutorial-cp4p.pdf
 f82179eba947665566889ad0811523cd *man/LFQRatio2.Rd
 076fdbae00fcdcd88ac901e3e8a268b7 *man/LFQRatio25.Rd

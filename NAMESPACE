@@ -5,3 +5,4 @@ importFrom(multtest,mt.rawp2adjp)
 importFrom(limma,convest)
 importFrom(stats,lm,ecdf,coefficients,quantile)
 importFrom(graphics,plot,lines,legend,polygon,text,title)
+
